@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset name="field_items1" label="MOD_OK_CARDPANEL_CONTENT">
+        <field name="image" label="MOD_OK_CARDPANEL_IMAGE" type="media"/>
+        <field name="title" label="MOD_OK_CARDPANEL_TITLE" type="text"/>
+        <field name="subtitle" label="MOD_OK_CARDPANEL_SUBTITLE" type="text"/>
+        <field name="text" label="MOD_OK_CARDPANEL_DESCRIPTION" type="textarea" rows="8" filter="safehtml"/>
+        <field name="link_type" type="list" default="url" label="MOD_OK_CARDPANEL_LINK_TYPE">
+            <option value="0">No Link</option>
+            <option value="menu">Menu Item</option>
+            <option value="url">URL</option>
+        </field>
+        <field name="link_text" type="text" label="MOD_OK_CARDPANEL_LINK_TEXT" default="Read more"
+               showon="link_type:url[OR]link_type:menu"/>
+        <field name="mymenuitem" type="menuitem" label="MOD_OK_CARDPANEL_LINK_MENU" showon="link_type:menu"/>
+        <field name="link" label="MOD_OK_CARDPANEL_LINK_URL" type="text" showon="link_type:url"/>
+    </fieldset>
+    <fieldset name="field_items2" label="MOD_OK_CARDPANEL_STYLE">
+        <field name="animation" type="list" label="MOD_OK_CARDPANEL_ANIMATION" default="0">
+            <option value="0">Without animation</option>
+            <option value="uk-animation-fade">fadeIn</option>
+            <option value="uk-animation-slide-bottom">slideInUp</option>
+            <option value="uk-animation-slide-top">slideInDown</option>
+            <option value="uk-animation-slide-left">slideInFromLeft</option>
+            <option value="uk-animation-slide-right">slideInFromRight</option>
+            <option value="uk-animation-scale-up">zoomIn</option>
+            <option value="uk-animation-scale-down">zoomOut</option>
+            <option value="plus" disabled="disabled">+ 31 more in PRO</option>
+        </field>
+        <field name="delay" type="integer" default="0" label="MOD_OK_CARDPANEL_ANIMATION_DELAY"
+               description="MOD_OK_CARDPANEL_ANIMATION_DELAY_DESCRIPTION" first="0"
+               last="1500" step="250"/>
+    </fieldset>
+</form>

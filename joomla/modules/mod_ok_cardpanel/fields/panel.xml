@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+
+    <fieldset name="field_items2" label="MOD_OK_CARDPANEL_STYLE">
+        <field name="background_color" type="color" label="MOD_OK_CARDPANEL_BACKGROUND_COLOR"/>
+        <field name="pattern" type="imagelist" class="ok_img_select"
+               directory="modules/mod_ok_cardpanel/assets/images/patterns/"
+               label="MOD_OK_CARDPANEL_IMAGE_SELECT_CUPTURE" default=""
+               description="MOD_OK_CARDPANEL_IMAGE_SELECT_CUPTURE_DESCRIPTION"/>
+        <field name="padding" type="list" label="MOD_OK_CARDPANEL_PADDING" default="0">
+            <option value="0">Default</option>
+            <option value="20">20px</option>
+            <option value="40">40px</option>
+            <option value="60">60px</option>
+            <option value="80">80px</option>
+            <option value="100">100px</option>
+            <option value="120">120px</option>
+            <option value="140">140px</option>
+            <option value="160">160px</option>
+            <option value="180">180px</option>
+            <option value="200">200px</option>
+        </field>
+    </fieldset>
+</form>

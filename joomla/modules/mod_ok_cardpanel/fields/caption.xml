@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset name="field_items1" label="MOD_OK_CARDPANEL_CONTENT">
+        <field name="title" label="MOD_OK_CARDPANEL_CAPTION" type="textarea"/>
+        <field name="animation_title" type="list" label="MOD_OK_CARDPANEL_ANIMATION">
+            <option value="0">Without animation</option>
+            <option value="uk-animation-fade">fadeIn</option>
+            <option value="uk-animation-slide-bottom">slideInUp</option>
+            <option value="uk-animation-slide-top">slideInDown</option>
+            <option value="uk-animation-slide-left">slideInFromLeft</option>
+            <option value="uk-animation-slide-right">slideInFromRight</option>
+            <option value="uk-animation-scale-up">zoomIn</option>
+            <option value="uk-animation-scale-down">zoomOut</option>
+        </field>
+        <field name="text" label="MOD_OK_CARDPANEL_DESCRIPTION" type="textarea" rows="5" filter="safehtml"/>
+        <field name="animation_text" type="list" label="MOD_OK_CARDPANEL_ANIMATION">
+            <option value="0">Without animation</option>
+            <option value="uk-animation-fade">fadeIn</option>
+            <option value="uk-animation-slide-bottom">slideInUp</option>
+            <option value="uk-animation-slide-top">slideInDown</option>
+            <option value="uk-animation-slide-left">slideInFromLeft</option>
+            <option value="uk-animation-slide-right">slideInFromRight</option>
+            <option value="uk-animation-scale-up">zoomIn</option>
+            <option value="uk-animation-scale-down">zoomOut</option>
+        </field>
+    </fieldset>
+    <fieldset name="field_items2" label="MOD_OK_CARDPANEL_STYLE">
+        <field name="font_color" type="color" label="MOD_OK_CARDPANEL_COLOR"/>
+        <field name="background_color" type="color" label="MOD_OK_CARDPANEL_BACKGROUND_COLOR"/>
+        <field name="pattern" type="imagelist" class="ok_img_select"
+               directory="modules/mod_ok_cardpanel/assets/images/patterns/"
+               label="MOD_OK_CARDPANEL_IMAGE_SELECT_CUPTURE"
+               description="MOD_OK_CARDPANEL_IMAGE_SELECT_CUPTURE_DESCRIPTION"/>
+        <field name="padding" type="list" label="MOD_OK_CARDPANEL_PADDING" default="0">
+            <option value="0">Default</option>
+            <option value="40">40px</option>
+            <option value="60">60px</option>
+            <option value="80">80px</option>
+            <option value="100">100px</option>
+            <option value="120">120px</option>
+            <option value="140">140px</option>
+            <option value="160">160px</option>
+            <option value="180">180px</option>
+            <option value="200">200px</option>
+        </field>
+        <field name="font_size" type="list" label="MOD_OK_CARDPANEL_FONTSIZE"
+               description="MOD_OK_CARDPANEL_FONTSIZE_DESCRIPTION" showon="type:title[OR]type:breadcrumbs">
+            <option value="">Default</option>
+            <option value="1rem">1 rem</option>
+            <option value="1.2rem">1.2 rem</option>
+            <option value="1.4rem">1.4 rem</option>
+            <option value="1.6rem">1.6 rem</option>
+            <option value="1.8rem">1.8 rem</option>
+            <option value="2rem">2 rem</option>
+            <option value="2.2rem">2.2 rem</option>
+            <option value="2.4rem">2.4 rem</option>
+            <option value="2.6rem">2.6 rem</option>
+            <option value="2.8rem">2.8 rem</option>
+            <option value="3rem">3 rem</option>
+            <option value="3.2rem">3.2 rem</option>
+            <option value="3.4rem">3.4 rem</option>
+            <option value="3.6rem">3.6 rem</option>
+            <option value="3.8rem">3.8 rem</option>
+            <option value="4rem">4 rem</option>
+        </field>
+        <field name="style_arrow" type="radio" class="btn-group" label="MOD_OK_CARDPANEL_ARROW_DIRECTION"
+               default="ok-cp-caption-down">
+            <option value="ok-cp-caption-down">Down</option>
+            <option value="ok-cp-caption-up">Up</option>
+            <option value="ok-cp-caption">None</option>
+        </field>
+    </fieldset>
+</form>

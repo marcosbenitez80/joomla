@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.6" method="upgrade">
+    <name>OK Animated Card Panel</name>
+    <creationDate>2017-06-27</creationDate>
+    <author>Alexander Green</author>
+    <authorEmail>alexgreen932@gmail.com</authorEmail>
+    <authorUrl>http://orionkit.com/</authorUrl>
+    <copyright>Copyright (C) 2017- OrionKit. All rights reserved.</copyright>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <version>1.0.5</version>
+    <description><![CDATA[
+        <h1 style="color: #333">Animated Card Panel 1.0.5</h1>
+        <p style="font-size: 24px; color: #617ba3">Simple | Smart | Stylish</p>
+        ]]></description>
+    <files>
+        <filename module="mod_ok_cardpanel">mod_ok_cardpanel.php</filename>
+        <folder>assets</folder>
+        <folder>tmpl</folder>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <filename>mod_ok_cardpanel.xml</filename>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB.mod_ok_cardpanel.ini</language>
+        <language tag="en-GB">language/en-GB.mod_ok_cardpanel.sys.ini</language>
+    </languages>
+    <updateservers>
+        <server type="extension" priority="1" name="Ok Cards Panel Update">
+            http://orionkit.com/updates/mod_ok_cardpanel_update.xml
+        </server>
+    </updateservers>
+    <config>
+        <fields name="params" addfieldpath="/modules/mod_ok_cardpanel/assets/fields">
+
+            <fieldset name="basic">
+                <field name="module_note" type="note" label="MOD_OK_CARDPANEL_INFO" class="ok_card" description="MOD_OK_CARDPANEL_INFO_DESCRIPTION"/>
+                <field name="get_pro" type="note" label="MOD_OK_CARDPANEL_PRO" class="ok_card" description="MOD_OK_CARDPANEL_PRO_DESCRIPTION"/>
+            </fieldset>
+               <fieldset name="cards_tab" label="MOD_OK_CARDPANEL_TAB_CARDS">
+                <field name="card_note" type="oknote" label="MOD_OK_CARDPANEL_CARDS_NOTE" description="MOD_OK_CARDPANEL_CARD_NOTE_DESCRIPTION"/>
+                <field name="card_style" type="list" default="1" label="MOD_OK_CARDPANEL_CARDSTYLE" class="hover-style">
+                    <option value="effect-default">Default</option>
+                    <option value="ok-effect-circle">Circle Image</option>
+                    <option value="plus" disabled="disabled">+ 20 more in PRO</option>
+                </field>
+                <field name="img_note" type="note" label="MOD_OK_CARDPANEL_IMGNOTE" class="alert alert-info" description="MOD_OK_CARDPANEL_IMGNOTE_DESCRIPTION" showon="card_style:ok-effect-circle"/>
+                <field name="figure_background_color" type="color" label="MOD_OK_CARDPANEL_BACKGROUND_COLOR_TOP" default="#90a4ae" showon="card_style:ok-effect-circle"/>
+                <!-- <field name="trigger" type="list" default="1" label="MOD_OK_CARDPANEL_TRIGGER" class="hover-style" description="MOD_OK_CARDPANEL_TRIGGER_DESCRIPTION" showon="animation_type:orionkit">
+                    <option value="0">Start</option>
+                    <option value="end">End</option>
+                    <option value="100">Strart after 100px in viewport</option>
+                    <option value="200">Strart after 200px in viewport</option>
+                    <option value="300">Strart after 300px in viewport</option>
+                    <option value="400">Strart after 400px in viewport</option>
+                </field> -->
+                <field name="card"
+                       type="subform"
+                       label="MOD_OK_CARDPANEL_CARDS"
+                       description="MOD_OK_CARDPANEL_CARDS_DESCRIPTION"
+                       formsource="modules/mod_ok_cardpanel/assets/fields/cards.xml"
+                       layout="joomla.form.field.subform.repeatable-table" 
+                       multiple="true"
+                       groupByFieldset="true"
+                       min="1" max="6"
+                       default="{&quot;card0&quot;:{&quot;image&quot;:&quot;modules\/mod_ok_cardpanel\/assets\/images\/demo-cards.jpg&quot;,&quot;title&quot;:&quot;Card 1&quot;,&quot;subtitle&quot;:&quot;Lorem ipsum dolor sit amet&quot;,&quot;text&quot;:&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &quot;,&quot;link_type&quot;:&quot;menu&quot;,&quot;link_text&quot;:&quot;Read more&quot;,&quot;mymenuitem&quot;:&quot;110&quot;,&quot;link&quot;:&quot;&quot;,&quot;animation&quot;:&quot;uk-animation-slide-left&quot;,&quot;delay&quot;:&quot;250&quot;,&quot;background_color&quot;:&quot;&quot;,&quot;font_color&quot;:&quot;&quot;,&quot;button_color&quot;:&quot;&quot;,&quot;button_link_color&quot;:&quot;&quot;},&quot;card1&quot;:{&quot;image&quot;:&quot;modules\/mod_ok_cardpanel\/assets\/images\/demo-cards.jpg&quot;,&quot;title&quot;:&quot;Card 2&quot;,&quot;subtitle&quot;:&quot;Lorem ipsum dolor sit amet&quot;,&quot;text&quot;:&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &quot;,&quot;link_type&quot;:&quot;menu&quot;,&quot;link_text&quot;:&quot;Read more&quot;,&quot;mymenuitem&quot;:&quot;110&quot;,&quot;link&quot;:&quot;&quot;,&quot;animation&quot;:&quot;uk-animation-fade&quot;,&quot;delay&quot;:&quot;0&quot;,&quot;background_color&quot;:&quot;&quot;,&quot;font_color&quot;:&quot;&quot;,&quot;button_color&quot;:&quot;&quot;,&quot;button_link_color&quot;:&quot;&quot;},&quot;card2&quot;:{&quot;image&quot;:&quot;modules\/mod_ok_cardpanel\/assets\/images\/demo-cards.jpg&quot;,&quot;title&quot;:&quot;Card 3&quot;,&quot;subtitle&quot;:&quot;Lorem ipsum dolor sit amet&quot;,&quot;text&quot;:&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &quot;,&quot;link_type&quot;:&quot;menu&quot;,&quot;link_text&quot;:&quot;Read more&quot;,&quot;mymenuitem&quot;:&quot;110&quot;,&quot;link&quot;:&quot;&quot;,&quot;animation&quot;:&quot;uk-animation-slide-right&quot;,&quot;delay&quot;:&quot;250&quot;,&quot;background_color&quot;:&quot;#ffffff&quot;,&quot;font_color&quot;:&quot;&quot;,&quot;button_color&quot;:&quot;&quot;,&quot;button_link_color&quot;:&quot;&quot;}}"/>
+            </fieldset>
+            
+            
+            <fieldset name="caption_body" label="MOD_OK_CARDPANEL_TAB_PANEL">
+                <field name="use_caption" type="radio" class="btn-group" label="MOD_OK_CARDPANEL_OWNCAPTION" default="1" description="MOD_OK_CARDPANEL_OWNCAPTION_DESCRIPTION">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="caption" type="subform"
+                       formsource="modules/mod_ok_cardpanel/assets/fields/caption.xml"
+                       label="MOD_OK_CARDPANEL_CAPTIONSETTINGS"
+                       layout="joomla.form.field.subform.repeatable-table"
+                       groupByFieldset="true"
+                       showon="use_caption:1"
+                       default="{&quot;title&quot;:&quot;Card Title&quot;,&quot;animation_title&quot;:&quot;0&quot;,&quot;text&quot;:&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit&quot;,&quot;animation_text&quot;:&quot;0&quot;,&quot;font_color&quot;:&quot;&quot;,&quot;background_color&quot;:&quot;&quot;,&quot;pattern&quot;:&quot;&quot;,&quot;padding&quot;:&quot;0&quot;,&quot;font_size&quot;:&quot;&quot;,&quot;style_arrow&quot;:&quot;ok-cp-caption-down&quot;}"/>
+                <field name="panel" type="subform"
+                       formsource="modules/mod_ok_cardpanel/assets/fields/panel.xml"
+                       label="MOD_OK_CARDPANEL_PANELSETTONGS"
+                       layout="joomla.form.field.subform.repeatable-table"
+                       groupByFieldset="true"
+                       default="{&quot;background_color&quot;:&quot;&quot;,&quot;pattern&quot;:&quot;&quot;,&quot;padding&quot;:&quot;0&quot;}"/>
+            </fieldset>
+            <fieldset name="config_tab" label="MOD_OK_CARDPANEL_TAB_CONFIG">
+                <field name="layout" type="radio" class="btn-group" default="1" label="MOD_OK_CARDPANEL_LAYOUTS" description="MOD_OK_CARDPANEL_LAYOUTS_DESCRIPTION">
+                    <option value="1">Parallel</option>
+                    <option value="2">Stacked</option>
+                </field>
+                <field name="bottom_margin" type="text" label="MOD_OK_CARDPANELMARGIN" default="20" description="MOD_OK_CARDPANELMARGIN_DESCRIPTION" showon="layout:2"/>
+                <field name="container" type="radio" class="btn-group" default="1" label="MOD_OK_CARDPANEL_CONTAINER"
+                       description="MOD_OK_CARDPANEL_CONTAINER_DESCRIPTION">
+                    <option value="1">No</option>
+                    <option value="2">Yes</option>
+                </field>
+                <field name="container_width" type="text" label="MOD_OK_CARDPANEL_CONTAINER_WIDTH" description="MOD_OK_CARDPANEL_CONTAINER_WIDTH_DESCRIPTION" showon="container:2"/>
+                <field name="shadow" type="list" label="MOD_OK_CARDPANEL_SHADOW" default=" z-depth-05">
+                    <option value=" z-depth-0">No Border</option>
+                    <option value=" ok-simple-border">Simple Border</option>
+                    <option value=" z-depth-05">Shadow Depth-0.5</option>
+                    <option value=" z-depth-1">Shadow Depth-1</option>
+                    <option value=" z-depth-2">Shadow Depth-2</option>
+                    <option value=" z-depth-3">Shadow Depth-3</option>
+                    <option value=" z-depth-4">Shadow Depth-4</option>
+                    <option value=" z-depth-5">Shadow Depth-5</option>
+                </field>
+                <field name="title_wrapper" type="list" label="MOD_OK_CARDPANEL_TITLE_WRAPPER" default="ok-clean" description="MOD_OK_CARDPANEL_WRAPPER_DESCRIPTION">
+                    <option value="ok-clean">No Wrapper</option>
+                    <option value="ok-wrapper-dark">Dark Wrapper</option>
+                    <option value="ok-wrapper-light">Light Wrapper</option>
+                </field>
+                <field name="subtitle_wrapper" type="list" label="MOD_OK_CARDPANEL_SUBTITLE_WRAPPER" default="ok-clean"  description="MOD_OK_CARDPANEL_WRAPPER_DESCRIPTION">
+                    <option value="ok-clean">No Wrapper</option>
+                    <option value="ok-wrapper-dark">Dark Wrapper</option>
+                    <option value="ok-wrapper-light">Light Wrapper</option>
+                </field>
+                <field name="text_align" type="radio" class="btn-group" label="MOD_OK_CARDPANEL_ALIGN" default=" uk-text-left">
+                    <option value=" uk-text-left">Left</option>
+                    <option value=" uk-text-center">Center</option>
+                    <option value=" uk-text-right">Right</option>
+                </field>
+                <field name="image_height" type="text" label="MOD_OK_CARDPANEL_IMGHEIGHT" default="0" description="MOD_OK_CARDPANEL_IMGHEIGHT_DESCRIPTION"/>
+                <field name="target" type="list" label="MOD_OK_CARDPANEL_TARGET_GLOBAL" default="0" description="MOD_OK_CARDPANEL_TARGET_GLOBAL_DESCRIPTION">
+                    <option value="0">Same Window</option>
+                    <option value="1">New Window</option>
+                </field>
+                <field name="modnote" type="oknote" close="true" label="MOD_OK_CARDPANEL_GLOBAL_CONFIGURATION" description="MOD_OK_CARDPANEL_GLOBAL_CONFIGURATION_DESCRIPTION"/>
+                <field name="background_color" type="color" label="MOD_OK_CARDPANEL_BACKGROUND_COLOR" default="#fff"/>
+                <field name="font_color" type="color" label="MOD_OK_CARDPANEL_COLOR" default="#444"/>
+                <field name="button_color" type="color" label="MOD_OK_CARDPANEL_BUTTON_COLOR" default="#2384d3"/>
+                <field name="button_link_color" type="color" label="MOD_OK_CARDPANEL_BACKGROUND_LINK_COLOR"
+                       default="#ffffff"/>
+            </fieldset>
+         
+        </fields>
+    </config>
+</extension>
